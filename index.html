@@ -30,7 +30,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -65,6 +65,7 @@
     --signal: #4FBDA8;
     --mono: 'IBM Plex Mono', monospace;
     --sans: 'IBM Plex Sans', sans-serif;
+    --display: 'Space Grotesk', 'IBM Plex Sans', sans-serif;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
@@ -120,8 +121,8 @@
   .eyebrow::before{content:''; width:18px; height:1px; background:var(--signal); display:inline-block;}
 
   h1{
-    font-family:var(--mono); font-weight:600; font-size:clamp(30px,4.4vw,46px);
-    line-height:1.18; letter-spacing:-0.01em; color:var(--text); margin-bottom:20px;
+    font-family:var(--display); font-weight:600; font-size:clamp(32px,4.6vw,50px);
+    line-height:1.16; letter-spacing:-0.02em; color:var(--text); margin-bottom:20px;
   }
   h1 .accent{color:var(--accent);}
 
@@ -188,7 +189,7 @@
   section.divider{border-bottom:1px solid var(--border-soft);}
   .section-head{display:flex; align-items:baseline; gap:14px; margin-bottom:40px;}
   .section-num{font-family:var(--mono); font-size:12px; color:var(--text-dimmer);}
-  .section-title{font-family:var(--mono); font-size:20px; font-weight:600; color:var(--text);}
+  .section-title{font-family:var(--display); font-size:22px; font-weight:600; color:var(--text); letter-spacing:-0.01em;}
   .section-line{flex:1; height:1px; background:var(--border-soft);}
 
   /* ---------- experience (log style) ---------- */
@@ -245,8 +246,8 @@
   /* ---------- footer / contact ---------- */
   footer{padding:70px 0 50px;}
   .cta-title{
-    font-family:var(--mono); font-weight:600; font-size:clamp(24px,3.6vw,34px);
-    color:var(--text); margin-bottom:14px; max-width:600px;
+    font-family:var(--display); font-weight:600; font-size:clamp(26px,3.8vw,36px);
+    letter-spacing:-0.01em; color:var(--text); margin-bottom:14px; max-width:600px;
   }
   .cta-desc{color:var(--text-dim); font-size:14.5px; max-width:480px; margin-bottom:32px;}
   .footer-links{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:56px;}
@@ -367,24 +368,6 @@
   .arch-edge{stroke:var(--border); stroke-width:1.2; fill:none;}
   .arch-nlabel{font-size:8px; fill:var(--text); font-weight:500;}
 
-  /* ---------- project gallery ---------- */
-  .gallery-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
-  @media (max-width:860px){ .gallery-grid{grid-template-columns:repeat(2,1fr);} }
-  @media (max-width:560px){ .gallery-grid{grid-template-columns:1fr;} }
-  .gallery-card{
-    background:var(--surface); border:1px solid var(--border); border-radius:6px; overflow:hidden;
-    transition:border-color .2s ease, transform .2s ease;
-  }
-  .gallery-card:hover{border-color:var(--accent-dim); transform:translateY(-2px);}
-  .gallery-thumb{
-    aspect-ratio:16/10; width:100%; display:block; object-fit:cover;
-    background:var(--surface2);
-    border-bottom:1px solid var(--border-soft);
-  }
-  .gallery-caption{padding:12px 14px;}
-  .gallery-caption .g-title{font-family:var(--mono); font-size:12px; color:var(--text); font-weight:500;}
-  .gallery-caption .g-sub{font-family:var(--mono); font-size:10.5px; color:var(--text-dimmer); margin-top:3px;}
-
   /* ---------- resume section ---------- */
   .resume-card{
     display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px;
@@ -442,29 +425,6 @@
   }
   .status-badge::before{content:''; width:5px; height:5px; border-radius:50%; background:var(--accent-dim); flex-shrink:0; animation:pulse 1.8s infinite;}
 
-  /* ---------- gallery: screenshot-card chrome ---------- */
-  .gallery-thumb-wrap{position:relative;}
-  .browser-bar{
-    display:flex; align-items:center; gap:6px;
-    padding:9px 12px; background:var(--surface2); border-bottom:1px solid var(--border-soft);
-  }
-  .browser-bar .b-dot{width:7px; height:7px; border-radius:50%; background:var(--border); border:1px solid var(--text-dimmer);}
-  .browser-bar .b-dot:nth-child(1){background:var(--text-dimmer);}
-  .browser-bar .b-url{
-    margin-left:8px; font-family:var(--mono); font-size:9px; color:var(--text-dimmer);
-    background:var(--bg); border:1px solid var(--border-soft); border-radius:10px;
-    padding:2px 10px; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-  }
-  .gallery-caption{
-    padding:14px; border-top:1px solid var(--border-soft);
-  }
-  .gallery-caption .g-eyebrow{
-    font-family:var(--mono); font-size:9px; color:var(--signal); text-transform:uppercase;
-    letter-spacing:0.08em; margin-bottom:5px;
-  }
-  .gallery-caption .g-title{font-size:13px;}
-  .gallery-caption .g-sub{margin-top:4px;}
-
   /* ---------- back to top ---------- */
   .back-to-top{
     position:fixed; right:24px; bottom:24px; z-index:60;
@@ -492,6 +452,74 @@
   .footer-col ul{list-style:none; display:flex; flex-direction:column; gap:10px;}
   .footer-col a{font-size:13px; color:var(--text-dim); transition:color .15s ease;}
   .footer-col a:hover{color:var(--accent);}
+
+  /* ---------- resume viewer modal (HTML resume, no external deps) ---------- */
+  .resume-modal-backdrop{
+    position:fixed; inset:0; z-index:90;
+    background:rgba(6,7,9,0.82); backdrop-filter:blur(3px);
+    display:flex; align-items:center; justify-content:center;
+    padding:32px 20px;
+    opacity:0; visibility:hidden; transition:opacity .2s ease, visibility .2s ease;
+  }
+  .resume-modal-backdrop.open{opacity:1; visibility:visible;}
+  .resume-modal{
+    width:100%; max-width:780px; height:88vh;
+    background:var(--surface); border:1px solid var(--border); border-radius:8px;
+    display:flex; flex-direction:column; overflow:hidden;
+    transform:translateY(12px); transition:transform .2s ease;
+  }
+  .resume-modal-backdrop.open .resume-modal{transform:translateY(0);}
+  .resume-modal-header{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 18px; border-bottom:1px solid var(--border-soft); flex-shrink:0;
+  }
+  .resume-modal-header span{font-family:var(--mono); font-size:12.5px; color:var(--text-dim);}
+  .resume-modal-close{
+    display:flex; align-items:center; justify-content:center;
+    width:30px; height:30px; border-radius:5px; border:1px solid var(--border);
+    color:var(--text-dim); background:transparent; cursor:pointer; transition:all .15s ease;
+  }
+  .resume-modal-close:hover{border-color:var(--accent); color:var(--accent);}
+  .resume-modal-close svg{width:15px; height:15px;}
+  .resume-modal-body{flex:1; background:#3a3d42; overflow:auto; padding:28px;}
+
+  /* ---------- HTML resume document (renders inside the modal) ---------- */
+  .resume-doc{
+    background:#fdfdfb; color:#1c1c1c; font-family:Georgia,'Times New Roman',serif;
+    max-width:640px; margin:0 auto; padding:44px 48px 52px;
+    box-shadow:0 6px 24px rgba(0,0,0,0.35); line-height:1.5;
+  }
+  .resume-doc h1{
+    font-family:Georgia,serif; font-size:23px; font-weight:700; letter-spacing:0.04em;
+    text-align:center; color:#111; margin-bottom:6px;
+  }
+  .resume-doc .rd-contact{
+    text-align:center; font-size:11.5px; color:#444; margin-bottom:18px;
+  }
+  .resume-doc .rd-contact a{color:#444; text-decoration:underline;}
+  .resume-doc h2{
+    font-family:Arial,Helvetica,sans-serif; font-size:11.5px; font-weight:700; color:#111;
+    text-transform:uppercase; letter-spacing:0.08em;
+    border-bottom:1.4px solid #111; padding-bottom:3px; margin:20px 0 10px;
+  }
+  .resume-doc h2:first-of-type{margin-top:0;}
+  .resume-doc p{font-size:12.5px; color:#2a2a2a; margin-bottom:4px;}
+  .resume-doc .rd-role{
+    display:flex; justify-content:space-between; align-items:baseline; gap:10px;
+    font-family:Arial,Helvetica,sans-serif; margin-bottom:2px;
+  }
+  .resume-doc .rd-role strong{font-size:13px; color:#111;}
+  .resume-doc .rd-role span{font-size:11px; color:#555; white-space:nowrap; font-style:italic;}
+  .resume-doc .rd-subrole{font-family:Arial,Helvetica,sans-serif; font-size:11.5px; font-weight:700; color:#1c1c1c; margin:10px 0 2px;}
+  .resume-doc .rd-tech{font-family:Arial,Helvetica,sans-serif; font-size:10.5px; color:#555; font-style:italic; margin-bottom:5px;}
+  .resume-doc ul{margin:0 0 10px 18px; padding:0;}
+  .resume-doc ul li{font-size:12px; color:#2a2a2a; margin-bottom:4px;}
+  .resume-doc .rd-skill-row{font-size:12px; color:#2a2a2a; margin-bottom:6px;}
+  .resume-doc .rd-skill-row strong{color:#111; font-family:Arial,Helvetica,sans-serif; font-size:11.5px;}
+  @media (max-width:600px){
+    .resume-doc{padding:28px 20px 36px;}
+    .resume-doc .rd-role{flex-direction:column; gap:0;}
+  }
 </style>
 </head>
 <body>
@@ -500,12 +528,11 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <div class="logo"><span class="dot"></span>A. SRIKANTH</div>
+    <div class="logo"><span class="dot"></span>A.SRIKANTH</div>
     <nav class="links" aria-label="Primary">
       <a href="#why">why me</a>
       <a href="#experience">experience</a>
       <a href="#projects">projects</a>
-      <a href="#gallery">gallery</a>
       <a href="#skills">skills</a>
       <a href="#resume">resume</a>
       <a href="#contact">contact</a>
@@ -530,7 +557,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
             Download Resume
           </a>
-          <a class="btn icon-btn" href="https://github.com/smekala531-debug/portfolio/blob/main/Srikanth_Resume_Updated%20(3).pdf" target="_blank" rel="noopener noreferrer" aria-label="View resume PDF in a new tab">
+          <a class="btn icon-btn view-resume-btn" href="#" aria-label="View resume in a popup">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
             View Resume
           </a>
@@ -821,97 +848,9 @@
     </div>
   </section>
 
-  <section id="gallery" class="divider reveal">
-    <div class="section-head">
-      <span class="section-num">04</span>
-      <h2 class="section-title">Project Gallery</h2>
-      <span class="section-line"></span>
-    </div>
-    <div class="gallery-grid">
-      <div class="gallery-card">
-        <div class="gallery-thumb-wrap">
-          <div class="browser-bar"><span class="b-dot"></span><span class="b-dot"></span><span class="b-dot"></span><span class="b-url">jamm.internal/graph</span></div>
-          <img class="gallery-thumb" loading="lazy" width="480" height="300"
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 300'%3E%3Crect width='480' height='300' fill='%231A1E23'/%3E%3Cpath d='M40 260 L440 260 M40 40 L40 260' stroke='%23262B31' stroke-width='1.5'/%3E%3Cg fill='none' stroke='%23FF8A3D' stroke-width='2'%3E%3Crect x='60' y='100' width='70' height='34' rx='4'/%3E%3Crect x='200' y='70' width='70' height='34' rx='4'/%3E%3Crect x='200' y='150' width='70' height='34' rx='4'/%3E%3Crect x='340' y='100' width='70' height='34' rx='4'/%3E%3Cpath d='M130 117 L200 87 M130 117 L200 167 M270 87 L340 117 M270 167 L340 117'/%3E%3C/g%3E%3C/svg%3E"
-            alt="Placeholder screenshot — LangGraph multi-agent workflow graph, to be replaced with an actual product screenshot">
-        </div>
-        <div class="gallery-caption">
-          <div class="g-eyebrow">Screenshot</div>
-          <div class="g-title">LangGraph Workflow</div>
-          <div class="g-sub">Supervisor → sub-agent state graph</div>
-        </div>
-      </div>
-      <div class="gallery-card">
-        <div class="gallery-thumb-wrap">
-          <div class="browser-bar"><span class="b-dot"></span><span class="b-dot"></span><span class="b-dot"></span><span class="b-url">smith.langchain.com/o/traces</span></div>
-          <img class="gallery-thumb" loading="lazy" width="480" height="300"
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 300'%3E%3Crect width='480' height='300' fill='%231A1E23'/%3E%3Cg fill='%234FBDA8' opacity='0.85'%3E%3Crect x='50' y='210' width='24' height='50'/%3E%3Crect x='90' y='170' width='24' height='90'/%3E%3Crect x='130' y='190' width='24' height='70'/%3E%3Crect x='170' y='120' width='24' height='140'/%3E%3Crect x='210' y='150' width='24' height='110'/%3E%3Crect x='250' y='90' width='24' height='170'/%3E%3Crect x='290' y='160' width='24' height='100'/%3E%3Crect x='330' y='70' width='24' height='190'/%3E%3Crect x='370' y='130' width='24' height='130'/%3E%3C/g%3E%3Cline x1='40' y1='260' x2='420' y2='260' stroke='%23262B31' stroke-width='1.5'/%3E%3C/svg%3E"
-            alt="Placeholder screenshot — LangSmith trace latency chart, to be replaced with an actual product screenshot">
-        </div>
-        <div class="gallery-caption">
-          <div class="g-eyebrow">Screenshot</div>
-          <div class="g-title">LangSmith Traces</div>
-          <div class="g-sub">Agent call latency &amp; prompt debugging</div>
-        </div>
-      </div>
-      <div class="gallery-card">
-        <div class="gallery-thumb-wrap">
-          <div class="browser-bar"><span class="b-dot"></span><span class="b-dot"></span><span class="b-dot"></span><span class="b-url">api.jamm.internal/docs</span></div>
-          <img class="gallery-thumb" loading="lazy" width="480" height="300"
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 300'%3E%3Crect width='480' height='300' fill='%231A1E23'/%3E%3Crect x='40' y='50' width='400' height='24' rx='3' fill='%2314171B' stroke='%23262B31'/%3E%3Crect x='40' y='90' width='400' height='30' rx='3' fill='%2314171B' stroke='%23262B31'/%3E%3Crect x='40' y='128' width='400' height='30' rx='3' fill='%2314171B' stroke='%23262B31'/%3E%3Crect x='40' y='166' width='400' height='30' rx='3' fill='%2314171B' stroke='%23262B31'/%3E%3Crect x='50' y='97' width='36' height='16' rx='2' fill='%234FBDA8'/%3E%3Crect x='50' y='135' width='36' height='16' rx='2' fill='%23FF8A3D'/%3E%3Crect x='50' y='173' width='36' height='16' rx='2' fill='%234FBDA8'/%3E%3C/svg%3E"
-            alt="Placeholder screenshot — FastAPI Swagger documentation UI, to be replaced with an actual product screenshot">
-        </div>
-        <div class="gallery-caption">
-          <div class="g-eyebrow">Screenshot</div>
-          <div class="g-title">FastAPI Swagger</div>
-          <div class="g-sub">REST endpoint documentation</div>
-        </div>
-      </div>
-      <div class="gallery-card">
-        <div class="gallery-thumb-wrap">
-          <div class="browser-bar"><span class="b-dot"></span><span class="b-dot"></span><span class="b-dot"></span><span class="b-url">cv-inference.local/predict</span></div>
-          <img class="gallery-thumb" loading="lazy" width="480" height="300"
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 300'%3E%3Crect width='480' height='300' fill='%231A1E23'/%3E%3Crect x='60' y='40' width='360' height='220' fill='%2314171B' stroke='%23262B31'/%3E%3Cg fill='none' stroke='%23FF8A3D' stroke-width='2'%3E%3Crect x='100' y='80' width='90' height='60' rx='3'/%3E%3Crect x='240' y='120' width='110' height='70' rx='3'/%3E%3Crect x='120' y='170' width='60' height='50' rx='3'/%3E%3C/g%3E%3C/svg%3E"
-            alt="Placeholder screenshot — YOLO object detection predictions on data center hardware, to be replaced with an actual product screenshot">
-        </div>
-        <div class="gallery-caption">
-          <div class="g-eyebrow">Screenshot</div>
-          <div class="g-title">YOLO Predictions</div>
-          <div class="g-sub">Hardware detection bounding boxes</div>
-        </div>
-      </div>
-      <div class="gallery-card">
-        <div class="gallery-thumb-wrap">
-          <div class="browser-bar"><span class="b-dot"></span><span class="b-dot"></span><span class="b-dot"></span><span class="b-url">cv-inference.local/output</span></div>
-          <img class="gallery-thumb" loading="lazy" width="480" height="300"
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 300'%3E%3Crect width='480' height='300' fill='%231A1E23'/%3E%3Cg fill='none' stroke='%234FBDA8' stroke-width='2'%3E%3Crect x='70' y='60' width='120' height='90' rx='3'/%3E%3Crect x='230' y='100' width='90' height='70' rx='3'/%3E%3Crect x='350' y='70' width='70' height='110' rx='3'/%3E%3C/g%3E%3Ctext x='75' y='55' font-family='monospace' font-size='11' fill='%234FBDA8'%3Erack-unit 0.94%3C/text%3E%3C/svg%3E"
-            alt="Placeholder screenshot — detection output overlay with confidence scores, to be replaced with an actual product screenshot">
-        </div>
-        <div class="gallery-caption">
-          <div class="g-eyebrow">Screenshot</div>
-          <div class="g-title">Detection Outputs</div>
-          <div class="g-sub">Confidence-scored classifications</div>
-        </div>
-      </div>
-      <div class="gallery-card">
-        <div class="gallery-thumb-wrap">
-          <div class="browser-bar"><span class="b-dot"></span><span class="b-dot"></span><span class="b-dot"></span><span class="b-url">notebooks/eval-report.ipynb</span></div>
-          <img class="gallery-thumb" loading="lazy" width="480" height="300"
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 300'%3E%3Crect width='480' height='300' fill='%231A1E23'/%3E%3Cpolyline points='50,240 110,180 170,200 230,120 290,140 350,70 410,90' fill='none' stroke='%23FF8A3D' stroke-width='2.5'/%3E%3Cline x1='40' y1='250' x2='430' y2='250' stroke='%23262B31'/%3E%3Cline x1='40' y1='40' x2='40' y2='250' stroke='%23262B31'/%3E%3C/svg%3E"
-            alt="Placeholder screenshot — model evaluation graph showing precision and recall over training epochs, to be replaced with an actual product screenshot">
-        </div>
-        <div class="gallery-caption">
-          <div class="g-eyebrow">Screenshot</div>
-          <div class="g-title">Evaluation Graphs</div>
-          <div class="g-sub">Precision / recall across epochs</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="skills" class="divider reveal">
     <div class="section-head">
-      <span class="section-num">05</span>
+      <span class="section-num">04</span>
       <h2 class="section-title">Stack</h2>
       <span class="section-line"></span>
     </div>
@@ -954,7 +893,7 @@
 
   <section id="resume" class="divider reveal">
     <div class="section-head">
-      <span class="section-num">06</span>
+      <span class="section-num">05</span>
       <h2 class="section-title">Resume</h2>
       <span class="section-line"></span>
     </div>
@@ -968,7 +907,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
           Download Resume
         </a>
-        <a class="btn icon-btn" href="https://github.com/smekala531-debug/portfolio/blob/main/Srikanth_Resume_Updated%20(3).pdf" target="_blank" rel="noopener noreferrer">
+        <a class="btn icon-btn view-resume-btn" href="#" aria-label="View resume in a popup">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
           View Resume
         </a>
@@ -978,7 +917,7 @@
 
   <section class="divider reveal">
     <div class="section-head">
-      <span class="section-num">07</span>
+      <span class="section-num">06</span>
       <h2 class="section-title">Education</h2>
       <span class="section-line"></span>
     </div>
@@ -1050,7 +989,7 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo"><span class="dot"></span>A. SRIKANTH</div>
+        <div class="logo"><span class="dot"></span>A.SRIKANTH</div>
         <p>AI Engineer building Generative AI, multi-agent systems, and computer vision that ship to production.</p>
       </div>
       <div class="footer-col">
@@ -1059,7 +998,6 @@
           <li><a href="#why">Why Hire Me</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#gallery">Gallery</a></li>
           <li><a href="#skills">Stack</a></li>
           <li><a href="#resume">Resume</a></li>
         </ul>
@@ -1075,11 +1013,76 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>A. SRIKANTH — AI ENGINEER</span>
+      <span>A.SRIKANTH — AI ENGINEER</span>
       <span>HYDERABAD, INDIA</span>
     </div>
   </div>
 </footer>
+
+<div class="resume-modal-backdrop" id="resumeModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="resumeModalTitle">
+  <div class="resume-modal">
+    <div class="resume-modal-header">
+      <span id="resumeModalTitle">A. Srikanth — Resume</span>
+      <button type="button" class="resume-modal-close" id="resumeModalClose" aria-label="Close resume viewer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="resume-modal-body">
+      <div class="resume-doc">
+        <h1>A. SRIKANTH</h1>
+        <p class="rd-contact">Hyderabad, India &nbsp;|&nbsp; +91 9347874974 &nbsp;|&nbsp; <a href="mailto:ashoksrikanth57@gmail.com">ashoksrikanth57@gmail.com</a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/srikanth-mekala-106986266" target="_blank" rel="noopener noreferrer">LinkedIn</a> &nbsp;|&nbsp; <a href="https://github.com/smekala531-debug" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+
+        <h2>Professional Summary</h2>
+        <p>AI/ML Engineer with 2+ years of production experience in Generative AI, Agentic systems, NLP, and Computer Vision. Built and deployed a LangGraph multi-agent RAG assistant with NLP-driven query classification that handles multi-turn conversational interactions, cutting document retrieval time from 20+ minutes to under 10 seconds and reducing support ticket volume by 60%. Hands-on across the full pipeline: LLM orchestration, prompt engineering, vector and graph retrieval, conversational flow design, CV model training, REST API deployment, and GCP-based infrastructure.</p>
+
+        <h2>Technical Skills</h2>
+        <p class="rd-skill-row"><strong>LLMs, Agents &amp; NLP:</strong> LangGraph, LangChain, RAG, ReAct Agents, Tool-Use / Function Calling, Prompt Engineering, NLP (Query Classification, Intent Detection), Multi-Turn Conversational Flow Design, LangSmith, Pydantic</p>
+        <p class="rd-skill-row"><strong>ML &amp; Vision:</strong> PyTorch, TensorFlow, YOLO, Faster R-CNN, CNNs, Fine-tuning, Hugging Face Transformers, OpenCV</p>
+        <p class="rd-skill-row"><strong>Data &amp; Retrieval:</strong> Neo4j (Cypher), ChromaDB, Vector Search, MongoDB Atlas, MySQL, AWS S3</p>
+        <p class="rd-skill-row"><strong>Backend &amp; Deploy:</strong> FastAPI, REST APIs, JWT / OAuth 2.0, Docker, Git, GitHub, Python</p>
+        <p class="rd-skill-row"><strong>Cloud &amp; Platform:</strong> GCP (Discovery Engine, Document AI, Cloud Storage)</p>
+
+        <h2>Professional Experience</h2>
+        <div class="rd-role"><strong>SprintPark — AI/ML Engineer</strong><span>Hyderabad, India | 2024 – Present</span></div>
+
+        <div class="rd-subrole">JAMM – Enterprise AI Knowledge Assistant</div>
+        <div class="rd-tech">LangGraph · LangChain · Gemini · NLP · Document AI · ChromaDB · GCP · OAuth 2.0</div>
+        <ul>
+          <li>Designed a LangGraph state-machine with a supervisor agent routing queries to specialized sub-agents (HR policy, SOP retrieval, document Q&amp;A) — reducing retrieval time from 20+ minutes to under 10 seconds across 500+ weekly queries.</li>
+          <li>Built ReAct-style tool-use agents that select retrieval strategy at inference time (ChromaDB vector search, graph traversal, GCP document fetch) using NLP-based query classification and intent detection — cutting support ticket volume by 60%.</li>
+          <li>Integrated GCP Document AI for PDF parsing and LangSmith for agent call tracing, latency monitoring, and prompt debugging; secured endpoints with OAuth 2.0.</li>
+          <li>Persisted agent conversation state using LangGraph memory, enabling coherent multi-turn conversational flows without refetching context.</li>
+        </ul>
+
+        <div class="rd-subrole">Data Center Image Intelligence System</div>
+        <div class="rd-tech">YOLO · Faster R-CNN · PyTorch · OpenCV · FastAPI · Docker</div>
+        <ul>
+          <li>Trained a YOLO + Faster R-CNN pipeline to detect and classify data center hardware (switches, cables, ports, rack units) — reducing manual review from 30–40 minutes to under 3 minutes (90% reduction).</li>
+          <li>Built a confidence-threshold feedback loop that flags low-certainty detections for human review and queues them for incremental retraining, reducing manual model update cycles.</li>
+          <li>Containerized the inference service with Docker and deployed via FastAPI REST endpoints, integrating with network administration tooling used by the ops team.</li>
+        </ul>
+
+        <h2>Key Projects</h2>
+        <div class="rd-subrole">Agentic Document Workflow Engine</div>
+        <div class="rd-tech">LangGraph · LangChain · Gemini · NLP · ChromaDB · Pydantic</div>
+        <ul>
+          <li>Built a LangGraph multi-agent pipeline with distinct planner, retriever, validator, and responder agents, each handling a specific stage of document query resolution with retry logic and structured JSON output via Pydantic.</li>
+          <li>Implemented function-calling agents that dynamically choose between vector search, keyword retrieval, and graph traversal based on real-time NLP query classification.</li>
+        </ul>
+
+        <div class="rd-subrole">Neo4j Survey Knowledge Graph</div>
+        <div class="rd-tech">Neo4j · Cypher · Python · Graph Data Modeling</div>
+        <ul>
+          <li>Modeled enterprise survey questionnaires as a Neo4j graph with nested conditional flows and decision trees as typed nodes and relationships; Cypher traversal queries outperformed equivalent recursive SQL joins on nested paths.</li>
+        </ul>
+
+        <h2>Education</h2>
+        <div class="rd-role"><strong>B.Tech in Computer Science and Engineering</strong><span>2019 – 2023</span></div>
+        <p>Impact College of Engineering and Applied Sciences, Bengaluru</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
@@ -1087,6 +1090,41 @@
 
 <script>
 (function(){
+  // Resume viewer modal — renders as real HTML in the page, no PDF plugin,
+  // no iframe, no external site. Always displays.
+  var resumeModalBackdrop = document.getElementById('resumeModalBackdrop');
+  var resumeModalClose = document.getElementById('resumeModalClose');
+  var resumeLastFocused = null;
+
+  function openResumeModal(){
+    if(!resumeModalBackdrop) return;
+    resumeLastFocused = document.activeElement;
+    resumeModalBackdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if(resumeModalClose) resumeModalClose.focus();
+  }
+  function closeResumeModal(){
+    if(!resumeModalBackdrop) return;
+    resumeModalBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
+    if(resumeLastFocused && resumeLastFocused.focus) resumeLastFocused.focus();
+  }
+  document.querySelectorAll('.view-resume-btn').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      openResumeModal();
+    });
+  });
+  if(resumeModalClose) resumeModalClose.addEventListener('click', closeResumeModal);
+  if(resumeModalBackdrop){
+    resumeModalBackdrop.addEventListener('click', function(e){
+      if(e.target === resumeModalBackdrop) closeResumeModal();
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && resumeModalBackdrop && resumeModalBackdrop.classList.contains('open')) closeResumeModal();
+  });
+
   // Tech ticker — duplicated for seamless loop
   var techs = [
     {name:'Python'}, {name:'LangGraph'}, {name:'LangChain'}, {name:'PyTorch'},
